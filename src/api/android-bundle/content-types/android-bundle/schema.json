@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "android_bundles",
+  "info": {
+    "singularName": "android-bundle",
+    "pluralName": "android-bundles",
+    "displayName": "Android Bundle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "note": {
+      "type": "string"
+    },
+    "targetVersion": {
+      "type": "string"
+    },
+    "enable": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "required": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "bundle": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sourceMap": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "downloaded": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "string"
+    },
+    "appID": {
+      "type": "string"
+    }
+  }
+}

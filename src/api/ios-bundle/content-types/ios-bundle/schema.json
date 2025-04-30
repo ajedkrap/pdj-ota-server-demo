@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ios_bundles",
+  "info": {
+    "singularName": "ios-bundle",
+    "pluralName": "ios-bundles",
+    "displayName": "iOS Bundle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "note": {
+      "type": "string"
+    },
+    "targetVersion": {
+      "type": "string"
+    },
+    "enable": {
+      "type": "boolean"
+    },
+    "required": {
+      "type": "boolean"
+    },
+    "bundle": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sourceMap": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "downloaded": {
+      "type": "integer"
+    },
+    "date": {
+      "type": "string"
+    },
+    "appID": {
+      "type": "string"
+    }
+  }
+}
