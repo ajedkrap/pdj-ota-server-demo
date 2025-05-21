@@ -23,8 +23,8 @@ A Strapi-based backend server for managing CodePush updates and configurations. 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ajedkrap/k3i-codepush-server.git
-cd k3i-codepush-server
+git clone https://github.com/ajedkrap/pdj-ota-server-demo.git
+cd pdj-ota-server-demo
 ```
 
 2. Install dependencies:
