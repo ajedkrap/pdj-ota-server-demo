@@ -1,61 +1,144 @@
-# 🚀 Getting started with Strapi
+# CodePush Server
 
-Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
+A Strapi-based backend server for managing CodePush updates and configurations. This server provides a robust API for handling mobile app updates and configurations.
 
-### `develop`
+## 🚀 Features
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+- Built with Strapi v5.12.6
+- PostgreSQL database support
+- Docker containerization
+- TypeScript support
+- Environment-based configuration
+- Secure authentication and authorization
+- File upload capabilities
 
+## 📋 Prerequisites
+
+- Node.js >= 18.0.0
+- Yarn package manager
+- Docker and Docker Compose (for containerized deployment)
+- PostgreSQL (for production)
+
+## 🛠️ Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/ajedkrap/k3i-codepush-server.git
+cd k3i-codepush-server
 ```
-npm run develop
-# or
+
+2. Install dependencies:
+```bash
+yarn install
+```
+
+3. Set up environment variables:
+```bash
+cp .envExample .env
+```
+Fill in the required environment variables in the `.env` file.
+
+## 🔧 Development
+
+### Local Development
+
+1. Start the development server:
+```bash
 yarn develop
 ```
 
-### `start`
-
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
+2. Build the project:
+```bash
 yarn build
 ```
 
-## ⚙️ Deployment
+### Docker Development
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
+1. Start the development containers:
+```bash
+docker-compose -f docker-compose.dev.yaml up
+```
+
+## 🚀 Production Deployment
+
+### Using Docker
+
+1. Build and start the production containers:
+```bash
+./start-prod.sh
+```
+
+Or manually:
+```bash
+docker-compose -f docker-compose.prod.yaml up -d
+```
+
+### Environment Variables
+
+Required environment variables:
+- `ENV`: Environment (development/production)
+- `HOST`: Server host
+- `PORT`: Server port
+- `APP_KEYS`: Application keys
+- `API_TOKEN_SALT`: API token salt
+- `ADMIN_JWT_SECRET`: Admin JWT secret
+- `TRANSFER_TOKEN_SALT`: Transfer token salt
+- `JWT_SECRET`: JWT secret
+- Database configuration:
+  - `DATABASE_CLIENT`
+  - `DATABASE_HOST`
+  - `DATABASE_PORT`
+  - `DATABASE_NAME`
+  - `DATABASE_USERNAME`
+  - `DATABASE_PASSWORD`
+  - `DATABASE_SSL`
+
+## 📦 Project Structure
 
 ```
-yarn strapi deploy
+├── config/             # Strapi configuration
+├── database/          # Database migrations and seeds
+├── public/            # Public assets
+├── src/              # Source code
+│   ├── api/          # API endpoints
+│   ├── components/   # Reusable components
+│   ├── controllers/  # Route controllers
+│   ├── middlewares/  # Custom middlewares
+│   ├── policies/     # Route policies
+│   ├── routes/       # Route definitions
+│   └── services/     # Business logic
+├── types/            # TypeScript type definitions
+└── dist/             # Compiled output
 ```
 
-## 📚 Learn more
+## 🔐 Security
 
-- [Resource center](https://strapi.io/resource-center) - Strapi resource center.
-- [Strapi documentation](https://docs.strapi.io) - Official Strapi documentation.
-- [Strapi tutorials](https://strapi.io/tutorials) - List of tutorials made by the core team and the community.
-- [Strapi blog](https://strapi.io/blog) - Official Strapi blog containing articles made by the Strapi team and the community.
-- [Changelog](https://strapi.io/changelog) - Find out about the Strapi product updates, new features and general improvements.
+- JWT-based authentication
+- Environment-based secrets
+- Secure database connections
+- Docker container isolation
 
-Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/strapi). Your feedback and contributions are welcome!
+## 📚 API Documentation
 
-## ✨ Community
+The API documentation is available at `/documentation` when running the server.
 
-- [Discord](https://discord.strapi.io) - Come chat with the Strapi community including the core team.
-- [Forum](https://forum.strapi.io/) - Place to discuss, ask questions and find answers, show your Strapi project and get feedback or just talk with other Community members.
-- [Awesome Strapi](https://github.com/strapi/awesome-strapi) - A curated list of awesome things related to Strapi.
+## 🤝 Contributing
 
----
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-<sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+## 📝 License
+
+This project is private and confidential.
+
+## 👥 Authors
+
+- Transnovasi Team
+
+## 🙏 Acknowledgments
+
+- Strapi team for the amazing framework
+- All contributors who have helped shape this project
